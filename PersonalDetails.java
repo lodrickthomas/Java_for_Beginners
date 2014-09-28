@@ -1,57 +1,65 @@
 public class PersonalDetails
 {
-	private String firstName;
-	private String middleName;
-	private String lastName;
-	private int age;
-	private int day;
-	private int month;
-	private int year;
-	private String sex;
+	private String fullName;
+	private int ageNum;
+	private String birthDate;
+	private String sexType;
 
-	public Name(String f, String m, String l)
+	public PersonalDetails(String name, int age, String dob, String sex)
 	{
-		firstName = f;
-		middleName = m;
-		lastName = l;
+		fullName = name;
+		ageNum = age;
+		birthDate = dob;
+		sexType = sex;
 	}
 
-	public Age(int a)
+	public String getFullName()
 	{
-		age = a;
+		return "Name: " + fullName;
 	}
 
-	public BirthDate(int d, int m, int y)
+	public String getAge()
 	{
-		day = d;
-		month = m;
-		year = y;
+		return "Age: " + ageNum;
 	}
 
-	public Sex(String s)
+	public String getBirthDate()
 	{
-		sex = s;
+		return "Birth Date: " + birthDate;
 	}
 
-	//accessor
-	public String getName()
+	public String getSex()
 	{
-		return firstName + middleName + lastName;
+		return "Sex: " + sexType;
 	}
 
-	public void setName(String firstN, String secondN, String thirdN)
+	public void setFullName(String firstName, String middleName1, String middleName2, String lastName)
 	{
-		firstName = firstN;
-		middleName = secondN;
-		lastName = thirdN;
+		fullName = firstName + " " + middleName1 + " " + middleName2 + " " + lastName;
 	}
 
-
-	public void setName(String firstN, String thirdN)
+	void setFullName(String firstName, String middleName1, String lastName)
 	{
-		firstName = firstN;
-		middleName = "";
-		lastName = thirdN;
+		fullName = firstName + " " + middleName1 + " " + lastName;
 	}
 
+	void setFullName(String firstName, String lastName)
+	{
+		fullName = firstName + " " + lastName;
+	}
+	
+	void setBirthDate(int d, int m, int y)
+	{
+		birthDate = d + "/" + m + "/" + y;
+	}
+	
+	void setAge(int age)
+	{
+		ageNum = age;
+	}	
+	
+	void setSex(String sex)
+	{
+		sexType = sex;
+	}	
 }
